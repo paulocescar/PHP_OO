@@ -1,5 +1,5 @@
 <?php
-    include($_SERVER["DOCUMENT_ROOT"].'/aposta/config/usageDB.php');
+    include($_SERVER["DOCUMENT_ROOT"].'/php_oo/config/usageDB.php');
     include('User_model.php');
 
     class UsersServices {

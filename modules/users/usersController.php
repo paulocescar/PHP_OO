@@ -1,7 +1,8 @@
 <?php 
     include('usersServices.php');
-    $usersServices = new UsersServices();
     
+    $usersServices = new UsersServices();
+
     class UsersController{
         function create(){
             $data = $_POST; 

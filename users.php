@@ -1,13 +1,13 @@
 <?php
     include('modules/app.php');
 
+    $userController = new UsersController();
+    
     if(isset($_POST) && $_POST["id"] == ""){
-        $userInsert = new UsersController();
-        $userInsert->create();
+        $userController->create();
     }
 
     if(isset($_POST) && $_POST['id'] != ""){
-        $userUpdate = new UsersController();
-        $userUpdate->update();
+        $userController->update();
     }
 ?>

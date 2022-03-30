@@ -10,5 +10,13 @@
             return exec_sql($sql);
         }
 
+        public function update($user, $id){
+            $usuario = new User($user);
+            $sql = "UPDATE `users` SET ".arr_update($user)." WHERE `id` = ".$id;
+
+            return exec_sql($sql);
+
+        }
+
     }
 ?>

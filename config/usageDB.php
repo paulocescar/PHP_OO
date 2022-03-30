@@ -21,4 +21,13 @@
         $escaped_values = implode("', '", $data);
         return $escaped_values;
     }
+
+    
+    function arr_update($data){
+        $update = "";
+        foreach($data as $k => $v){
+            $update .= "`$k`='$v',";
+        }
+        return substr($update, 0, -1);
+    }
 ?>

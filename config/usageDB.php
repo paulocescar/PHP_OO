@@ -4,9 +4,9 @@
     function exec_sql($sql){
         global $conn;
         if($conn->query($sql) === TRUE){
-            echo "success";
+            return "success";
         }else{
-            echo "Error: " . $sql . "<br>" . $conn->error;
+            return "Error: " . $sql . "<br>" . $conn->error;
         }
 
         $conn->close();

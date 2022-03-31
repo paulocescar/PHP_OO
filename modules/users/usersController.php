@@ -1,18 +1,19 @@
 <?php 
     include('usersServices.php');
     
-    $usersServices = new UsersServices();
-
     class UsersController{
         function create(){
+            $usersServices = new UsersServices();
             $data = $_POST; 
-            $usersServices->create($data);
+            return $usersServices->create($data);
         }   
 
         function update(){
+            $usersServices = new UsersServices();
             $id = $_POST["id"];
             $data = $_POST; 
-            $usersServices->update($data, $id);
+            return $usersServices->update($data, $id);
+
         }   
     }
 

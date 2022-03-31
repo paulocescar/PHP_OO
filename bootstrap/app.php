@@ -55,7 +55,6 @@
     }
     
     function returnFunction($function){
-            // echo $function;
         $Surl = explode('?',$_SERVER['REQUEST_URI']);
 
         if($GLOBALS['url'] == $Surl[0] && isset($function)){

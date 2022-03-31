@@ -9,6 +9,11 @@
     });
     
     Routes::post('/users', function(){
-        return "post";
+        $uC = new UsersController();
+        if(input("id") == ""){
+            return $uC->create();
+        }else{
+            return $uC->update();
+        }
     });
 ?>

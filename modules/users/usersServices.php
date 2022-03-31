@@ -1,5 +1,5 @@
 <?php
-    include($_SERVER["DOCUMENT_ROOT"].'/php_oo/config/usageDB.php');
+    include($_SERVER["DOCUMENT_ROOT"].'/config/usageDB.php');
     include('User_model.php');
 
     class UsersServices {
@@ -15,7 +15,6 @@
             $sql = "UPDATE `users` SET ".arr_update($user)." WHERE `id` = ".$id;
 
             return exec_sql($sql);
-
         }
 
     }

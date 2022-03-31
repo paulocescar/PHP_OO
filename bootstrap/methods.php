@@ -16,7 +16,7 @@ class Routes{
     public static function post($url, $function) {
         if(isset($_POST)){
             uri($url);
-            input('id');
+            returnFunction($function());
         }
     }
 }

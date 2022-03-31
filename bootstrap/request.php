@@ -33,7 +33,7 @@ class Request{
 
     public function input($input){
         if(isset($GLOBALS['inputs_arr'][$input])){
-            echo $GLOBALS['inputs_arr'][$input];
+            return $GLOBALS['inputs_arr'][$input];
         }
     }
 }

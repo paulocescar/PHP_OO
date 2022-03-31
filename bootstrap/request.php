@@ -1,6 +1,7 @@
 <?php
 
 $GLOBALS['request'] = new Request();
+$GLOBALS['url'] = "";
 $GLOBALS['params_arr']= [];
 
 class Request{
@@ -9,7 +10,7 @@ class Request{
         $paramComplete = explode('&', $params);
         foreach($paramComplete as $pc){
             $paramKeyValue = explode('=', $pc);
-            if($paramKeyValue[0]){
+            if($paramKeyValue[0] && isset($paramKeyValue[1])){
                 $GLOBALS['params_arr'][$paramKeyValue[0]] = $paramKeyValue[1];
             }
 
@@ -17,7 +18,9 @@ class Request{
     }
 
     public function param($param){
-        echo $GLOBALS['params_arr'][$param];
+        if(isset($GLOBALS['params_arr'][$param])){
+            echo $GLOBALS['params_arr'][$param];
+        }
     }
 }
 ?>

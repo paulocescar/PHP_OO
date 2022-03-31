@@ -1,14 +1,15 @@
 <?php
 
     Routes::get('/', function(){
+        param('id');
         return param('post');
     });
 
-    Routes::get('/test', function(){
+    Routes::get('/users', function(){
         return "teste";
     });
     
-    Routes::post('/users', function(){
+    Routes::post('/userss', function(){
         return "post";
     });
 ?>

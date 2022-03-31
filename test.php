@@ -8,9 +8,6 @@
 </head>
 <body>
     <form method="POST" action="users.php">
-        <?php 
-            echo param('post');
-        ?>
         <label for="">id</label><br>
         <input type="number" name="id"><br>
         <label for="">username</label><br>

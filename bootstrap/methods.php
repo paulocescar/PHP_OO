@@ -12,8 +12,12 @@ class Routes{
     }
 
     public static function post($url, $function) {
-        uri($url);
-        return $function();
+        if(isset($_POST)){
+            uri($url);
+            return $function();
+        }else{
+            return null;
+        }
     }
 }
 ?>

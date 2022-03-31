@@ -1,5 +1,6 @@
 <?php
 
+$GLOBALS['request'] = new Request();
 $GLOBALS['params_arr']= [];
 
 class Request{
@@ -16,7 +17,7 @@ class Request{
     }
 
     public function param($param){
-        return $GLOBALS['params_arr'][$param];
+        echo $GLOBALS['params_arr'][$param];
     }
 }
 ?>

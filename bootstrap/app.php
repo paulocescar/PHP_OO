@@ -1,6 +1,4 @@
 <?php
-    include('bootstrap/request.php');
-    $GLOBALS['request'] = new Request();
     function uri($url){
         
         $Surl = explode('?',$_SERVER['REQUEST_URI']);

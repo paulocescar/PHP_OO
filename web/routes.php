@@ -1,7 +1,7 @@
 <?php
 
     Routes::get('/', function(){
-        return "teste";
+        return param('post');
     });
 
     Routes::get('/test', function(){

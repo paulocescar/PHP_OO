@@ -1,8 +1,7 @@
 <?php
     function uri($url){
-        $GLOBALS['url'] = $url;
         $Surl = explode('?',$_SERVER['REQUEST_URI']);
-        
+        $GLOBALS['url'] = $url;
         if($url == $Surl[0]){
             $prepare_url = str_replace('/','',$_SERVER['REQUEST_URI']);
             if(!empty($prepare_url)){
@@ -35,6 +34,20 @@
 
         if($GLOBALS['url'] == $Surl[0]){
             return $GLOBALS['request']->param($param);
+        }
+    }
+
+    
+    function returnFunction($function){
+            // echo $function;
+        $Surl = explode('?',$_SERVER['REQUEST_URI']);
+
+        if($GLOBALS['url'] == $Surl[0]){
+            if(is_string($function)){
+                echo $function;
+            }else{
+                return $function();
+            }
         }
     }
 ?>

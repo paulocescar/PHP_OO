@@ -1,8 +1,7 @@
 <?php
 
     Routes::get('/', function(){
-        param('id');
-        return param('post');
+        return "testando";
     });
 
     Routes::get('/users', function(){

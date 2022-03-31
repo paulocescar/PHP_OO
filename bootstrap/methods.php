@@ -7,17 +7,16 @@ class Routes{
     }
 
     public static function get($url, $function) {
-        uri($url);
-        returnFunction($function());
-    
+        if (empty($_POST)) {
+            uri($url);
+            returnFunction($function());
+        }
     }
 
     public static function post($url, $function) {
         if(isset($_POST)){
             uri($url);
-            returnFunction($function);
-        }else{
-            return null;
+            input('id');
         }
     }
 }

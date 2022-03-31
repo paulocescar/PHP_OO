@@ -8,7 +8,7 @@
         return "teste";
     });
     
-    Routes::post('/userss', function(){
+    Routes::post('/users', function(){
         return "post";
     });
 ?>

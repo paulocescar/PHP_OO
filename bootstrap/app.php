@@ -3,6 +3,10 @@
         $Surl = explode('?',$_SERVER['REQUEST_URI']);
         $GLOBALS['url'] = $url;
         if($url == $Surl[0]){
+
+            /*
+             /Params in routes
+            */
             $prepare_url = str_replace('/','',$_SERVER['REQUEST_URI']);
             if(!empty($prepare_url)){
                 $params = explode('?',$prepare_url);
@@ -11,8 +15,13 @@
                 }
             }
             
+            /*
+             /Posts in routes
+            */
+            $GLOBALS['request']->posts($_POST);
+
             $files = explode('/',$url);
-        
+            
             if(COUNT($files) == 2 && $files[COUNT($files) - 1] == ""){
                 return Routes::index();
             }
@@ -37,12 +46,19 @@
         }
     }
 
+    function input($input){
+        $Surl = explode('?',$_SERVER['REQUEST_URI']);
+
+        if($GLOBALS['url'] == $Surl[0]){
+            return $GLOBALS['request']->input($input);
+        }
+    }
     
     function returnFunction($function){
             // echo $function;
         $Surl = explode('?',$_SERVER['REQUEST_URI']);
 
-        if($GLOBALS['url'] == $Surl[0]){
+        if($GLOBALS['url'] == $Surl[0] && isset($function)){
             if(is_string($function)){
                 echo $function;
             }else{
